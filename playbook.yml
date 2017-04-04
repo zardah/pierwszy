@@ -7,7 +7,7 @@
  # dodane
   tasks:
    - name: Update
-     apt: update_cache=yes upgrade=dist
+     apt: update_cache=yes upgrade=dist cache_valid_time=3600
      notify: autoremove
 
   handlers:
