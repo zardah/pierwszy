@@ -9,9 +9,9 @@ ACTION=="add", ENV{mount_options}="relatime"
 # Filesystem-specific mount options  
 ACTION=="add", ENV{ID_FS_TYPE}=="vfat|ntfs", ENV{mount_options}="$env{mount_options},utf8,gid=100,umask=002"  
 # Mount the device  
-ACTION=="add", RUN+="/bin/mkdir -p /mnt/pen/%E{dir_name}", RUN+="/bin/mount -o $env{mount_options} /dev/%k /mnt/pen/%E{dir_name}", RUN+="/bin/cp -rf /mnt/pen/%E{dir_name} /mnt/samba/"   
+ACTION=="add", RUN+="/bin/mkdir -p /mnt/pen/%E{dir_name}", RUN+="/bin/mount -o $env{mount_options /dev/%k /mnt/pen/%E{dir_name}", RUN+="/bin/mount.py"   
 # Clean up after removal  
-ACTION=="remove", ENV{dir_name}!="", RUN+="/bin/umount -l /mnt/pen/%E{dir_name}", RUN+="/bin/rm -rf /mnt/pen/%E{dir_name}", RUN+="/bin/rm -rf /mnt/samba/%E{dir_name}"
+ACTION=="remove", ENV{dir_name}!="", RUN+="/bin/umount -l /mnt/pen/%E{dir_name}", RUN+="/bin/mount.py", RUN+="/bin/mount.py"
 
 # Exit  
 LABEL="media_by_label_auto_mount_end"
