@@ -5,7 +5,7 @@ import subprocess
 # from fabric.api import *  (nie widzi fabric)
 
 
-label=[]
+
 label2=["dodatek"]
 
 
@@ -17,8 +17,11 @@ while True:
         break
     elif chec == "tak":
         print("Widoczne Labely\n")
-        label.append(subprocess.run("/sbin/blkid -o udev", shell=True))  # | grep -ie LABEL.[^ENC] | sed 's/.*\=//;s/.*\=//p'", shell=True)
-        #print(label)
+        label = subprocess.Popen("/sbin/blkid -o udev", stdout=subprocess.PIPE, shell=True)  # | grep -ie LABEL.[^ENC] | sed 's/.*\=//;s/.*\=//p'", shell=True)
+        (output, err) = label.communicate()
+        label_out = label.wait()
+        print(output)
+        print(label_out)
         break
     else:
         print("Wpisales cos innego, niz tak/nie. Wpisz ponownie.")
