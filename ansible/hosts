@@ -1,0 +1,9 @@
+[qemu]
+kvm
+
+
+[web]
+monit:1992
+ser:1987
+wis:20162
+druk:12988
