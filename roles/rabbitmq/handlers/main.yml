@@ -1,4 +1,0 @@
----
-# Handler to restart rabbitmq-server
-- name: restart rabbitmq-server
-  service: rabbitmq-server state=restarted
