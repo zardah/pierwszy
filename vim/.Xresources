@@ -1,0 +1,227 @@
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+
+URxvt.buffered: true
+
+URxvt*urgentOnBell: true
+
+URxvt*visualBell: false
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.iso14755: False
+
+URxvt.perl-ext-common: default,clipboard,font-size,matcher
+
+URxvt.url-launcher: /usr/bin/xdg-open
+
+URxvt.matcher.button: 1
+
+!URxvt*termName: rxvt-unicode
+
+URxvt*termName: rxvt-unicode-256color
+
+URxvt.transparent: false
+
+URxvt*shading: 100
+
+!!!!!URxvt.background: #080808
+
+URxvt.scrollBar: false
+
+Xft.antialias: true
+
+Xft.hinting: true
+
+Xft.hintstyle: hintfull
+
+Xft.dpi: 96
+
+Xft.rgba: rgb
+
+!URxvt.font: xft:Consolas:pixelsize=12
+
+!URxvt.font: xft:Anonymous Pro for Powerline:pixelsize=12
+
+!URxvt.font: xft:Monofur for Powerline:pixelsize=12
+
+!URxvt.font: xft:Bitstream Vera Sans Mono for Powerline:pixelsize=12
+
+URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=12
+
+!URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=12
+
+!URxvt.font: xft:Inconsolata for Powerline:pixelsize=12
+
+!URxvt.font: xft:Terminus (TTF) for Powerline:pixelsize=12
+
+!URxvt.font: xft:Inconsolata\-dz for Powerline:pixelsize=12
+
+!URxvt.font: xft:Inconsolata\-g for Powerline:pixelsize=12
+
+!URxvt.font: xft:Liberation Mono for Powerline:pixelsize=36
+
+!URxvt.font: xft:Meslo LG L DZ for Powerline:pixelsize=36
+
+!URxvt.font: xft:Meslo LG L for Powerline:pixelsize=36
+
+!URxvt.font: xft:Meslo LG M DZ for Powerline:pixelsize=36
+
+!URxvt.font: xft:Meslo LG M for Powerline:pixelsize=36
+
+!URxvt.font: xft:Meslo LG S DZ for Powerline:pixelsize=12
+
+!URxvt.font: xft:Meslo LG S for Powerline:pixelsize=12
+
+!URxvt.font: xft:Source Code Pro for Powerline:pixelsize=12
+
+!URxvt.font: xft:Terminess Powerline:pixelsize=32:style=bold
+
+!URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=14
+
+!URxvt.font: xft:Literation Mono Powerline:pixelsize=12
+
+URxvt.internalBorder: 0
+
+URxvt.perl-ext: default,url-select
+
+URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.url-select.launcher: /usr/bin/xdg-open
+
+URxvt.url-select.underline: true
+
+URxvt.keysym.C-Up: perl:font-size:increase
+
+URxvt.keysym.C-Down: perl:font-size:decrease
+
+URxvt.keysym.C-S-Up: perl:font-size:incglobal
+
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
+! - Terminal Colors
+
+!*foreground: #FFFFFF
+
+!*color0: #000000
+
+!*color1: #CD0000
+
+!*color2: #8143FF
+
+!*color3: #A5D4FC
+
+!*color4: #1E90FF
+
+!*color5: #CD00CD
+
+!*color6: #00CDCD
+
+!*color7: #DBFCFF
+
+!*color8: #4C4C4C
+
+!*color9: #FF0000
+
+!*color10: #00B95F
+
+!*color11: #AFEAFF
+
+!*color12: #85FFEB
+
+!*color13: #FF00FF
+
+!*color14: #00FFFF
+
+!*color15: #9AAFFF
+
+!#define wb_bg           #1c1c1c
+!#define wb_fg           #f6f3e8
+!#define wb_cur          #656565
+!#define wb_sel          #444444
+!#define wb_grey         #99968b
+!#define wb_blue         #8ac6f2
+!#define wb_red          #e5786d
+!#define wb_yellow       #cae682
+!#define wb_ltgreen      #e7f6da
+!#define wb_green        #95e454
+!#define wb_dkgrey       #8f8f8f
+
+!URxvt*background:       wb_bg
+!URxvt*foreground:       wb_fg
+!URxvt*cursorColor:      wb_cur
+!URxvt*color0:           black
+!URxvt*color1:           wb_red
+!URxvt*color2:           wb_green
+!URxvt*color3:           wb_yellow
+!URxvt*color4:           wb_blue
+!URxvt*color5:           wb_blue
+!URxvt*color6:           wb_blue
+!URxvt*color7:           wb_grey
+!URxvt*color9:           wb_dkgrey
+!URxvt*color8:           wb_red
+!URxvt*color10:          wb_green
+!URxvt*color11:          wb_yellow
+!URxvt*color12:          wb_blue
+!URxvt*color13:          wb_blue
+!URxvt*color14:          wb_blue
+!URxvt*color15:          white
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
+
+
+!! hard contrast: *background: #f9f5d7
+!*background: #fbf1c7
+!! soft contrast: *background: #f2e5bc
+!*foreground: #3c3836
+!! Black + DarkGrey
+!*color0:  #fdf4c1
+!*color8:  #928374
+!! DarkRed + Red
+!*color1:  #cc241d
+!*color9:  #9d0006
+!! DarkGreen + Green
+!*color2:  #98971a
+!*color10: #79740e
+!! DarkYellow + Yellow
+!*color3:  #d79921
+!*color11: #b57614
+!! DarkBlue + Blue
+!*color4:  #458588
+!*color12: #076678
+!! DarkMagenta + Magenta
+!*color5:  #b16286
+!*color13: #8f3f71
+!! DarkCyan + Cyan
+!*color6:  #689d6a
+!*color14: #427b58
+!! LightGrey + White
+!*color7:  #7c6f64
+!*color15: #3c3836
