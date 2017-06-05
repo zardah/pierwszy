@@ -1,19 +1,13 @@
-"noremap <C-Z> :update<CR> vnoremap <C-Z> <C-C>:update<CR> inoremap <C-Z>
-"<C-O>:update<CR>
+"noremap <C-Z> :update<CR> vnoremap <C-Z> <C-C>:update<CR> inoremap <C-Z> <C-O>:update<CR>
 " szybki zapis pliku, CTRL+z. 
 
 " noremap <Leader>e :quit<CR> noremap <Leader>E :qa!<CR>
-" Szybkie zamknięcie pliku/plików. Już widzisz do czego przydaje się
-" <Leader>.  Po wciśnięciu ",e" vim zamknie plik nad którym aktualnie
-" pracujesz. Jeżeli użyjesz ",E" to zostanie zamknięty cały
-" vim. Skrótów z <Leader> możesz używać podobnie jak tych z CTRL lub wciskać
-" jeden po drugim. Czyli w tym przypadku wciskając klawisz "e" nie musisz
-" trzymać klawisza ",". Analogicznie będzie w
+" Szybkie zamknięcie pliku/plików. Już widzisz do czego przydaje się <Leader>.  Po wciśnięciu ",e" vim zamknie plik nad którym aktualnie pracujesz. Jeżeli użyjesz ",E" to zostanie zamknięty cały
+" vim. Skrótów z <Leader> możesz używać podobnie jak tych z CTRL lub wciskać jeden po drugim. Czyli w tym przypadku wciskając klawisz "e" nie musisz trzymać klawisza ",". Analogicznie będzie w
 " kolejnych skrótach z wykorzystaniem <Leader>.
 
 "noremap <C-n> :nohl<CR> vnoremap <C-n> :nohl<CR> inoremap <C-n> :nohl<CR>
-" SEARCH - Jeżeli wyszukałeś jakąś frazę, to vim ją podkreślił, jeśli chcesz
-" pozbyć się podświetlenia wciśnij CTRL+n. 
+" SEARCH - Jeżeli wyszukałeś jakąś frazę, to vim ją podkreślił, jeśli chcesz pozbyć się podświetlenia wciśnij CTRL+n. 
 
 
 "set tw=79 
@@ -21,24 +15,14 @@
 "set fo-=t
  " komendy odpowiadaja za brak "zawijania tekstu.
 
-"set colorcolumn=0 
-"highlight ColorColumn ctermbg=233
-" odpowiadają za wyświetlanie się kolumny, która jest pomocna przy kodowaniu,
-" jeżeli " ustaliliście razem z zespołem jakąś konwencję. Dodatkowo, jeżeli
-" jest ci naprawdę potrzebne zawinięcie jakiegoś " tekstu możesz go zaznaczyć
-" i wcisnąć "gq". Program ci go zawinie do '79 kolumny i zacznie wypełniać
-" wiersz poniżej, również do 79 kolumny i tak w kółko. Szczerze, bardzo
-" rzadko z tego korzystam, ' ale przydaje się jak wrzucasz jakieś dłuższe
-" teksy do szablonu/kodu.wcisnąć "gq"'. Program ci go zawinie do 79 kolumny i
-" zacznie wypełniać wiersz poniżej, również do 79 kolumny i tak w kółko.  "
-" Szczerze, bardzo rzadko z tego korzystam, ale przydaje się jak wrzucasz
-" jakieś dłuższe teksy do szablonu/kodu.
+" set colorcolumn=80 
+" highlight ColorColumn ctermbg=233
+" odpowiadają za wyświetlanie się kolumny, która jest pomocna przy kodowaniu, jeżeli " ustaliliście razem z zespołem jakąś konwencję. Dodatkowo, jeżeli jest ci naprawdę potrzebne zawinięcie jakiegoś " tekstu możesz go zaznaczyć i wcisnąć "gq". Program ci go zawinie do '79 kolumny i zacznie wypełniać wiersz poniżej, również do 79 kolumny i tak w kółko. Szczerze, bardzo rzadko z tego korzystam, ' ale przydaje się jak wrzucasz jakieś dłuższe teksy do szablonu/kodu.wcisnąć "gq"'. Program ci go zawinie do 79 kolumny i zacznie wypełniać wiersz poniżej, również do 79 kolumny i tak w kółko.  " Szczerze, bardzo rzadko z tego korzystam, ale przydaje się jak wrzucasz jakieś dłuższe teksy do szablonu/kodu.
+
 
 
 """""autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red au InsertLeave * match ExtraWhitespace /\s\+$/
-" Podświetla na czerwono niepotrzebne białe znaki (taby/spacje). Jak
-" korzystasz z dobrodziejstw codereview to prędzej czy później będziesz tego
-" szukał.
+" Podświetla na czerwono niepotrzebne białe znaki (taby/spacje). Jak korzystasz z dobrodziejstw codereview to prędzej czy później będziesz tego szukał.
 
 
 
@@ -53,17 +37,18 @@ filetype off
 filetype plugin indent on
 
 
+
+
 set bs=2 
 set mouse=a
 " Ustawia normalną obsługę backspace oraz włącza obsługę myszki.
 
 let mapleader = ","
-" LEADER -  Binduje <Leader> do klawisza "," . Później zobaczysz do czego
-" może się przydać.
+" LEADER -  Binduje <Leader> do klawisza "," . Później zobaczysz do czego może się przydać.
 
 map <c-j> <c-w>j map <c-k> <c-w>k map <c-l> <c-w>l map <c-h> <c-w>h
-" SPLIT -  Służy do wygodniejszego poruszania się po okienkach. Zamiast
-" wciskania CTRL+w, a później h/j/k/l, wciskasz sobie CTRL+h/j/k/l.
+" SPLIT -  Służy do wygodniejszego poruszania się po okienkach. Zamiast wciskania CTRL+w, a później h/j/k/l, wciskasz sobie CTRL+h/j/k/l.
+
 
 nnoremap <C-r> :tabprevious<CR>
 nnoremap <C-y> :tabnext<CR>
@@ -71,8 +56,7 @@ nnoremap <C-t> :tabnew<CR>
 inoremap <C-r> <Esc>:tabprevious<CR>
 inoremap <C-y> <Esc>:tabnext<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
-" Tab navigation like Firefox. ctrl + r(wczesniejsze), ctrl+t(nowe),
-" ctrl+y(nastepny)
+" Tab navigation like Firefox. ctrl + r(wczesniejsze), ctrl+t(nowe), ctrl+y(nastepny)
 
 vnoremap < <gv
 vnoremap > >gv
@@ -81,8 +65,6 @@ vnoremap > >gv
 
 set number
 " komenda wyświetla numer wiersza w którym się znajdujesz po lewej stronie.
-
-
 
 set showbreak=↪ 
 " ZAWINIĘCIA - znak (strzałka)
@@ -98,25 +80,21 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-" W wielkim skrócie, używa tylko i wyłącznie spacji, zero tabów. Jak gdzieś
-" użyjesz taba to ci go zamieni na cztery spacje, dziękuję.
+" W wielkim skrócie, używa tylko i wyłącznie spacji, zero tabów. Jak gdzieś użyjesz taba to ci go zamieni na cztery spacje, dziękuję.
        
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-" Podświetla znalezioną frazę podczas szukania i rozróżnia znaki (oink to nie
-" to samo co OinK).
+" Podświetla znalezioną frazę podczas szukania i rozróżnia znaki (oink to nie to samo co OinK).
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
-" Wylacza podwietlanie wyszukanych obiektow poprzez kombinacje "Leader+/', w
-" tym przypadku ',+/'
+" Wylacza podwietlanie wyszukanych obiektow poprzez kombinacje "Leader+/', w  tym przypadku ',+/'
 
 set nobackup
 set nowritebackup
 set noswapfile
-" Wyłącza pliki backup oraz swap. Nie są Ci do niczego potrzebne, a jak
-" pracujesz z gitem czy mercurialem to tym bardziej.
+" Wyłącza pliki backup oraz swap. Nie są Ci do niczego potrzebne, a jak pracujesz z gitem czy mercurialem to tym bardziej.
 
 
 augroup reload_vimrc " {
@@ -137,14 +115,12 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h 
-" Zamiast uzywac do przejscia pomiedzy plikami 'ctrl+w', to mozna uzyc
-" 'ctrl+hjkl' - tak samo jak w owym menadrzerem okien 
+" Zamiast uzywac do przejscia pomiedzy plikami 'ctrl+w', to mozna uzyc 'ctrl+hjkl' - tak samo jak w owym menadrzerem okien 
 
 
 
 
-" --------------------  bez widocznych aktywnych wpisow w .vimrc
-"  -------------
+" --------------------  bez widocznych aktywnych wpisow w .vimrc  -------------
 " BufExplorer (plugin)
 " [Leader]+bs = pobiera z buforu wybrany plik i dzieli go na istniejace okno
 " [Leader]+be = pobiera wybrany plik z buforu i otwiera tylko jego
@@ -199,17 +175,8 @@ map <c-h> <c-w>h
 "Ctrl-l move to the split to the right
 "Ctrl-h move to the split to the left
 "Ctrl – w move to around to next windows split
-"Ctrl+w r (najpierw ctrl+w, a pozniej doklikamy "r") - zmiana miejsca okna
-
-" Ctrl+w < (wmniejszanie i powiekszanie okna vim)
-" Ctrl+w > 
 
 
-" $ (dolar) przenosi na koniec linii
-" ^ (domek)  - przejscie do poczatek linii
-" a+shift - przenosi na koniec linii i przelacza sie na tryb pisania
-" i+shift  - przenoszenie sie do poczatku linii i przejscie do trybu pisania
-" s+shift  - kasowanie calej linii
 " -------------------
 
 
@@ -219,11 +186,11 @@ map <c-h> <c-w>h
 " Bar na dole
 
 set laststatus=2
+" \ 'colorscheme': 'wombat',
 
-set background=dark
-colorscheme gruvbox
 
 let g:lightline = {
+\ 'colorscheme': 'gruvbox',
 \ 'active': {
 \ 'left': [ [ 'mode', 'paste' ],
 \ [ 'fugitive', 'filename' ] ]

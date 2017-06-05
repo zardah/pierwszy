@@ -1,0 +1,108 @@
+"set nocompatible
+
+call pathogen#infect()
+
+autocmd! bufwritepost .vimrc source %
+" Automatycznie przeławdowywuje plik .vimrc.
+
+"set pastetoggle=<F2> 
+"set clipboard=unnamed
+" Lepsze kopiowanie/wklejanie, jeżeli masz do wklejenia jakiś duży blok tekstu. Przechodzisz do trybu insert, wciskasz <F2> i wklejasz tekst.
+
+set bs=2 
+set mouse=a
+" Ustawia normalną obsługę backspace oraz włącza obsługę myszki.
+
+let mapleader = ","
+" Binduje <Leader> do klawisza "," . Później zobaczysz do czego może się przydać.
+
+noremap <C-n> :nohl<CR> vnoremap <C-n> :nohl<CR> inoremap <C-n> :nohl<CR>
+" Jeżeli wyszukałeś jakąś frazę, to vim ją podkreślił, jeśli chcesz pozbyć się podświetlenia wciśnij CTRL+n. 
+
+noremap <C-Z> :update<CR> vnoremap <C-Z> <C-C>:update<CR> inoremap <C-Z> <C-O>:update<CR>
+" Szybki zapis pliku, CTRL+z. 
+
+noremap <Leader>e :quit<CR> noremap <Leader>E :qa!<CR>
+" Szybkie zamknięcie pliku/plików. Już widzisz do czego przydaje się <Leader>.  Po wciśnięciu ",e" vim zamknie plik nad którym aktualnie pracujesz. Jeżeli użyjesz ",E" to zostanie zamknięty cały
+" vim. Skrótów z <Leader> możesz używać podobnie jak tych z CTRL lub wciskać jeden po drugim. Czyli w tym przypadku wciskając klawisz "e" nie musisz trzymać klawisza ",". Analogicznie będzie w
+" kolejnych skrótach z wykorzystaniem <Leader>.
+
+map <c-j> <c-w>j map <c-k> <c-w>k map <c-l> <c-w>l map <c-h> <c-w>h
+" Służy do wygodniejszego poruszania się po okienkach. Zamiast wciskania CTRL+w, a później h/j/k/l, wciskasz sobie CTRL+h/j/k/l.
+
+map <Leader>n <esc>:tabprevious<CR> map <Leader>m <esc>:tabnext<CR>
+
+" Wygodniejsze przemieszczanie się po zakładkach. ",n" (wcześniejsza), ",m" (następna).
+
+vnoremap < <gv vnoremap > >gv
+" Wygodne przemieszczanie bloków kodu. Zaznaczasz tekst i wybierasz w którym kierunku ma być przesunięty. "<" (lewo), ">" (prawo).
+
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red au InsertLeave * match ExtraWhitespace /\s\+$/
+" Podświetla na czerwono niepotrzebne białe znaki (taby/spacje). Jak korzystasz z dobrodziejstw codereview to prędzej czy później będziesz tego szukał.
+
+filetype off 
+filetype plugin indent on 
+syntax on
+" Włącza rozpoznawanie plików oraz podświetlanie składni.
+
+set number 
+set tw=80 
+" set nowrap 
+set fo-=t 
+" set colorcolumn=80 
+" highlight ColorColumn ctermbg=233
+
+" Pierwsza komenda wyświetla numer wiersza w którym się znajdujesz po lewej
+" stronie. Przedostatnia i ostatnia odpowiadają za wyświetlanie się kolumny,
+" która jest pomocna przy kodowaniu, jeżeli " ustaliliście razem z zespołem jakąś
+"konwencję. Natomiast druga, trzecia i czwarta komenda odpowiada za brak
+"zawijania tekstu. Dodatkowo, jeżeli jest ci naprawdę potrzebne zawinięcie
+"jakiegoś " tekstu możesz go zaznaczyć i wcisnąć "gq". Program ci go zawinie do
+"79 kolumny i zacznie wypełniać wiersz poniżej, również do 79 kolumny i tak w
+"kółko. Szczerze, bardzo rzadko z tego korzystam, " ale przydaje się jak
+"wrzucasz jakieś dłuższe teksy do szablonu/kodu.wcisnąć "gq". Program ci go
+"zawinie do 79 kolumny i zacznie wypełniać wiersz poniżej, również do 79 kolumny
+"i tak w kółko.  " Szczerze, bardzo rzadko z tego korzystam, ale przydaje się
+" jak wrzucasz jakieś dłuższe teksy do szablonu/kodu.
+
+
+" ------
+		
+set history=700
+set undolevels=700
+" Nie trzeba tłumaczyć.
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+" W wielkim skrócie, używa tylko i wyłącznie spacji, zero tabów. Jak gdzieś użyjesz taba to ci go zamieni na cztery spacje, dziękuję.
+       
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+" Podświetla znalezioną frazę podczas szukania i rozróżnia znaki (oink to nie to samo co OinK).
+
+set nobackup
+set nowritebackup
+set noswapfile
+" Wyłącza pliki backup oraz swap. Nie są Ci do niczego potrzebne, a jak pracujesz z gitem czy mercurialem to tym bardziej.
+
+" set guifont=Source\ Code\ Pro\ for\ Powerline\ for\ Powerline
+set laststatus=2
+"source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+
+
+
+function! LightlineFugitive()
+  return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+
+augroup reload_vimrc
+    autocmd!
+    autocmd bufwritepost  nested source 
+augroup END
+
+
