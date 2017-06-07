@@ -7,6 +7,7 @@ import paramiko
 # import time
 # import configparser
 # import threading
+from subprocess import STDOUT
 
 """supplies = ["jajko", "serek"]
 for i in range(len(supplies)):
@@ -18,19 +19,23 @@ for i in range(len(supplies)):
 hostname = "druk.tklx.pl"
 username = "tomboy"
 port = 12988
+# password=""
 
+# try:
 client = paramiko.SSHClient()
 client.load_system_host_keys()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 client.connect(hostname=hostname,
                port=port,
-               username=username)
+               username=username,
+               password="kluczq2rfyt7")
 
-stdin, stout, stderr = client.exec_command('ls /etc')
-print(stout.read())
+stdin, stdout, stderr = client.exec_command('ls -l')
+output = stdout
+print(output.read())
 
-
+# finally:
 client.close()
 
 
