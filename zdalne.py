@@ -14,7 +14,7 @@ for i in range(len(supplies)):
     print(' ' + str(i) + ' na liscie: ' + supplies[i])
 """
 
-output = []
+# output = []
 
 hostname = "druk.tklx.pl"
 username = "tomboy"
@@ -38,13 +38,14 @@ stdin, stdout, stderr = client.exec_command('cat /etc/passwd')
 # print(output.read())
 # pprint.pformat(output.read())
 
-# output = stdout
-output.append(stdout)
+output = stdout
+# output.append(stdout)
 
 
 # print(output.read())
-# pprint.pformat(output.read())
+wynik = pprint.pformat(output.read().decode('utf-8'))
+print(wynik)
 # finally:
 client.close()
 
-output
+
