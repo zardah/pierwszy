@@ -12,9 +12,12 @@ for i in range(len(supplies)):
 
 # output = []
 
-hostname = "druk.tklx.pl"
+# dodanie = []
+wynik = []
+
+hostname = "wis.tklx.pl"
 username = "tomboy"
-port = 12988
+port = 20162
 # password=""
 
 # try:
@@ -28,14 +31,18 @@ client.connect(hostname=hostname,
                username=username,
                password="kluczq2rfyt7")
 
-stdin, stdout, stderr = client.exec_command('cat /etc/passwd')
+stdin, stdout, stderr = client.exec_command('ls /mnt/rtorrent')
 
 output = stdout
 
-wynik = pprint.pformat(output.read().decode('utf-8'))
-print(wynik)
+# wynik = pprint.pformat(output.read().decode('utf-8'))
+wynik.append(pprint.pformat(output.read().decode('utf-8')))
+
+cosik = wynik.sort()
+
+# dodanie.append(wynik)
+# print('\n',  pprint.pformat(dodanie))
+
 
 # finally:
 client.close()
-
-
