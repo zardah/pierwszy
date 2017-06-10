@@ -13,7 +13,7 @@ for i in range(len(supplies)):
 # output = []
 
 # dodanie = []
-wynik = []
+dyskz = []
 
 hostname = "wis.tklx.pl"
 username = "tomboy"
@@ -32,13 +32,19 @@ client.connect(hostname=hostname,
                password="kluczq2rfyt7")
 
 stdin, stdout, stderr = client.exec_command('ls /mnt/rtorrent')
-
 output = stdout
 
 # wynik = pprint.pformat(output.read().decode('utf-8'))
-wynik.append(pprint.pformat(output.read().decode('utf-8')))
+dyskz.append(output.read().decode('utf-8'))
 
-cosik = wynik.sort()
+#print(pprint.pformat(dyskz))
+print(pprint.pformat(dyskz))
+for i in range(0, 1):
+    print(dyskz[i])
+
+# print(dyskz[1])
+
+
 
 # dodanie.append(wynik)
 # print('\n',  pprint.pformat(dodanie))
@@ -46,3 +52,7 @@ cosik = wynik.sort()
 
 # finally:
 client.close()
+
+
+
+
